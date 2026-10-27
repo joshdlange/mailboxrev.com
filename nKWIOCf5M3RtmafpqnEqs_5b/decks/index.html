@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mailbox Rev deck maker (internal)</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="app-top">
+  <span class="logo"><img src="assets/logo.svg" alt="">Mailbox Rev deck maker</span>
+  <span class="mono badge">Internal · no real rates loaded</span>
+  <span class="grow"></span>
+  <label class="mono" for="deckSel">Deck</label>
+  <select id="deckSel"></select>
+  <button class="btn sm" id="newBtn">New</button>
+  <button class="btn ghost sm" id="dupBtn">Duplicate</button>
+  <button class="btn ghost sm" id="delBtn">Delete</button>
+  <button class="btn ghost sm" id="expBtn">Export deck</button>
+  <button class="btn ghost sm" id="expAllBtn">Export library</button>
+  <button class="btn ghost sm" id="impBtn">Import</button>
+  <input type="file" id="impFile" accept=".json,application/json" hidden>
+  <button class="btn sm" id="libBtn">Template library</button>
+  <button class="btn lime sm" id="playBtn">Play</button>
+  <button class="btn sm" id="pdfBtn">Save as PDF</button>
+</header>
+<main class="builder">
+  <section class="panel catalog" aria-label="Slide library"><h2>Slide library</h2><div id="catalog"></div></section>
+  <section class="panel" aria-label="This deck"><h2>This deck <span class="mono" id="count"></span></h2>
+    <ul class="deck-list" id="deckList"></ul>
+    <p class="hint">Drag to reorder, or use the arrows.</p></section>
+  <section aria-label="Venue and preview">
+    <div class="panel"><h2>Venue and estimate inputs</h2>
+      <form class="form" id="f" onsubmit="return false">
+        <label class="wide">Deck name<input name="name" type="text"></label>
+        <label class="wide">Venue name<input name="venue" type="text" placeholder="Shown on the cover"></label>
+        <label>Business type<select name="vertical" id="vertical"></select></label>
+        <label>Locations<input name="locations" type="number" min="1" inputmode="numeric"></label>
+        <label>Wi-Fi equipment<select name="wifiGear" id="wifiGear"></select></label>
+        <label>Square feet per location<input name="sqftPerLocation" type="number" min="0" inputmode="numeric"></label>
+        <label>TVs per location<input name="tvsPerLocation" type="number" min="0" inputmode="numeric"></label>
+        <label>Guests per month, per location<input name="guestsPerMonth" type="number" min="0" inputmode="numeric"></label>
+        <label>Card sales per month, per location (USD)<input name="monthlyCardVolumePerLocation" type="number" min="0" inputmode="numeric"></label>
+        <label>Years of email, chat or CRM history<input name="yearsOfHistory" type="number" min="0" step="0.5" inputmode="decimal"></label>
+      </form>
+    </div>
+    <div class="preview-wrap"><div class="preview" id="preview"></div>
+      <p class="hint">The estimate slide is left out of Play and Save as PDF until every program that applies has a rate.</p></div>
+  </section>
+</main>
+<div class="lib" id="lib" hidden role="dialog" aria-label="Template library"><div class="lib-top"><h2>Template library</h2><button class="btn sm" id="libClose">Close</button></div><div class="lib-body" id="libBody"></div></div>
+<script src="data/copy-data.js"></script>
+<script src="../calculator/config.js"></script>
+<script src="../calculator/engine.js"></script>
+<script src="../calculator/programs/hudson-house.js"></script>
+<script src="../calculator/programs/troveo.js"></script>
+<script src="../calculator/programs/smarttab.js"></script>
+<script src="../calculator/programs/taiv.js"></script>
+<script src="../calculator/programs/opinari.js"></script>
+<script src="../calculator/programs/trillage.js"></script>
+<script src="lib/slides.js"></script>
+<script src="lib/deck.js"></script>
+<script src="lib/mount.js"></script>
+<script src="builder.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mailbox Rev estimator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#results">Skip to results</a>
+<header class="top">
+  <div class="wrap bar">
+    <strong class="logo">Mailbox Rev</strong>
+    <span class="mono" id="badge"></span>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow mono">Estimator</p>
+  <h1>What could one business <em>earn</em> from every program?</h1>
+  <p class="lede">Describe the business once. Each program runs on the same answers. Estimates come from a call with us.</p>
+
+  <div class="grid">
+    <form id="f" class="panel" aria-label="Business details" onsubmit="return false">
+      <label>Business type
+        <select name="vertical" id="vertical"></select>
+      </label>
+      <label>Locations
+        <input type="number" name="locations" min="1" value="1" inputmode="numeric">
+      </label>
+      <label>Square feet per location
+        <input type="number" name="sqftPerLocation" min="0" value="" placeholder="optional" inputmode="numeric">
+      </label>
+      <label>Wi-Fi equipment
+        <select name="wifiGear" id="wifiGear"></select>
+      </label>
+      <label>TVs per location
+        <input type="number" name="tvsPerLocation" min="0" value="0" inputmode="numeric">
+      </label>
+      <label>Guests per month, per location
+        <input type="number" name="guestsPerMonth" min="0" value="0" inputmode="numeric">
+      </label>
+      <label>Card sales per month, per location (USD)
+        <input type="number" name="monthlyCardVolumePerLocation" min="0" value="0" inputmode="numeric">
+      </label>
+      <label>Years of email, chat or CRM history
+        <input type="number" name="yearsOfHistory" min="0" step="0.5" value="0" inputmode="decimal">
+      </label>
+    </form>
+
+    <section id="results" class="panel results" aria-live="polite">
+      <h2>Per program</h2>
+      <ul id="list" class="list"></ul>
+      <div id="total" class="total"></div>
+    </section>
+  </div>
+
+  <section class="panel needs" id="internalPanel" hidden></section>
+</main>
+
+<footer class="wrap mono">Estimates are not a quote.</footer>
+
+<script src="config.js"></script>
+<script src="engine.js"></script>
+<script src="programs/hudson-house.js"></script>
+<script src="programs/troveo.js"></script>
+<script src="programs/smarttab.js"></script>
+<script src="programs/taiv.js"></script>
+<script src="programs/opinari.js"></script>
+<script src="programs/trillage.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

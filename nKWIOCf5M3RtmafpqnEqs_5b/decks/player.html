@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mailbox Rev deck player</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="player">
+<div class="bar" id="bar"></div>
+<div class="viewport" id="vp"><div class="frame" id="frame"></div></div>
+<div class="hud" id="hud">
+  <button class="btn" id="prev" aria-label="Previous slide">&larr;</button>
+  <span class="count" id="count"></span>
+  <button class="btn" id="nextb" aria-label="Next slide">&rarr;</button>
+  <button class="btn" id="fs">Fullscreen (F)</button>
+  <button class="btn" id="pdf">Save as PDF (P)</button>
+  <button class="btn" id="open">Open deck file</button>
+  <input type="file" id="file" accept=".json,application/json" hidden>
+</div>
+<div class="print-sheet" id="sheet"></div>
+<script src="data/copy-data.js"></script>
+<script src="../calculator/config.js"></script>
+<script src="../calculator/engine.js"></script>
+<script src="../calculator/programs/hudson-house.js"></script>
+<script src="../calculator/programs/troveo.js"></script>
+<script src="../calculator/programs/smarttab.js"></script>
+<script src="../calculator/programs/taiv.js"></script>
+<script src="../calculator/programs/opinari.js"></script>
+<script src="../calculator/programs/trillage.js"></script>
+<script src="lib/slides.js"></script>
+<script src="lib/deck.js"></script>
+<script src="lib/mount.js"></script>
+<script src="player.js"></script>
+</body>
+</html>
