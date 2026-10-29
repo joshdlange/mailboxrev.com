@@ -326,7 +326,7 @@
   },
   "phone": "(347) 205-3138",
   "email": "info@mailboxrev.com",
-  "footerDisclosure": "Program agreements are usually made directly with each partner. Mailbox Rev and its parent company, Jackaroni LLC, may earn a commission or referral fee.",
+  "footerDisclosure": "Program agreements are usually made directly with each partner. Mailbox Rev and its parent company, Silly Bros Ventures LLC, may earn a commission or referral fee.",
   "tagline": "Ancillary revenue, no matter what business you own."
 };
   if (typeof module !== 'undefined' && module.exports) module.exports = data;
